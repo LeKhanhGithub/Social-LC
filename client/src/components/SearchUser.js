@@ -75,8 +75,8 @@ function SearchUser({ isInputChat }) {
           ) : (
             <a href="/">
               <img
-                src="https://res.cloudinary.com/dujubytqp/image/upload/v1638191132/social-upload/br285x7yowwuls1fh8ii.png"
-                alt="https://res.cloudinary.com/dujubytqp/image/upload/v1638191132/social-upload/br285x7yowwuls1fh8ii.png"
+                src="https://www.photoshopbuzz.com/wp-content/uploads/change-color-part-of-image-psd16.png"
+                alt="Logo"
                 className="img-icon"
               />
             </a>
