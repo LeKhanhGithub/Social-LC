@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import BotChat from "./BotChat";
 import Icon from "./Icon";
 import { createMessage } from "../../../redux/reducers/conversation";
+import { Link } from "react-router-dom";
 
 function FeedChat({
   isRightbar,
@@ -85,7 +86,7 @@ function FeedChat({
           {recipient?.isGroup ? (
             <img
               className="sidebar-chat-item-img"
-              src={recipient.avatarGroup}
+              src="https://wabetainfo.com/wp-content/uploads/2022/05/WA_GROUP_TW.png"
               alt=""
             />
           ) : (
@@ -129,12 +130,13 @@ function FeedChat({
               style={{ color: "#0084ff", backgroundColor: "white" }}
             ></i>
           </div>
-          <div>
+          <Link to={`/video/call`}>
             <i
               className="fas fa-video feedchat_footer_icon"
               style={{ color: "#0084ff", backgroundColor: "white" }}
             ></i>
-          </div>
+          </Link>
+
           <div onClick={() => setIsRightbar(!isRightbar)}>
             <i
               className="fa fa-info-circle feedchat_footer_icon"
@@ -174,7 +176,7 @@ function FeedChat({
                   </>
                 ) : (
                   <div className="feedchat_content_start">
-                    <BotChat msg={msg} />
+                    <BotChat msg={msg} recipient={recipient} />
                   </div>
                 )}
               </>

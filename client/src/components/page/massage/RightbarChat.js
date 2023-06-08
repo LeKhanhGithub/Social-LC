@@ -6,14 +6,23 @@ function RightbarChat({ recipient, auth }) {
   const [drop2, setDrop2] = useState(false);
   const [drop3, setDrop3] = useState(false);
   const [drop4, setDrop4] = useState(false);
+
+  console.log({ recipient });
+
+  const members = recipient.totalUser.filter((user, index) => {
+    return (
+      recipient.totalUser.findIndex((u) => u.email === user.email) === index
+    );
+  });
+
   return (
     <div className=" rightbarchat">
       <div className="rightbarchat_header">
-        <img
+        {/* <img
           className="rightbarchat_header_img"
-          src={recipient.avatarGroup}
+          src="https://bigtop.vn/blog/wp-content/uploads/2022/01/Facebook-Messenger.jpg"
           alt={recipient.avatarGroup}
-        />
+        /> */}
         <span className="rightbarchat_Online"></span>
         <p className="rightbarchat_header_name">
           {recipient?.isGroup ? (
@@ -77,7 +86,7 @@ function RightbarChat({ recipient, auth }) {
               aria-expanded="false"
               onClick={() => setDrop2(!drop2)}
             >
-              <span>Menber in chat</span>
+              <span>Member in chat</span>
               {drop2 ? (
                 <div>
                   <span>∧</span>
@@ -91,7 +100,7 @@ function RightbarChat({ recipient, auth }) {
               className="dropdown-menu"
               aria-labelledby="dropdownMenuButton2"
             >
-              {recipient.totalUser.map((user, index) => (
+              {members.map((user, index) => (
                 <div className="menbership">
                   <Link to={`/profile/${user._id}`} className="menbership_info">
                     <img src={user.avatar} alt={user.avatar} />

@@ -7,6 +7,7 @@ import {
   clearMeesages,
 } from "../../../redux/reducers/conversation";
 import AddUserCvst from "./AddUserCvst";
+import { Link } from "react-router-dom";
 
 function SidebarChat({
   auth,
@@ -22,6 +23,7 @@ function SidebarChat({
   const isInputChat = true;
 
   const handleOnChangeRecipient = (cvst, index) => {
+    console.log({ cvst });
     setRecipient(cvst);
     if (cvst._id) dispatch(getMessages(cvst?._id));
     else dispatch(clearMeesages());
@@ -43,7 +45,10 @@ function SidebarChat({
         <h3>Chat</h3>
         <div className="sidebar-chat-header-icons">
           <i className="fa fa-ellipsis-h sidebar-chat-header-icon"></i>
-          <i className="fas fa-video sidebar-chat-header-icon"></i>
+          <Link to={`/video/call`}>
+            <i className="fas fa-video sidebar-chat-header-icon"></i>
+          </Link>
+
           <i className="fa fa-edit sidebar-chat-header-icon"></i>
         </div>
       </div>
@@ -71,7 +76,7 @@ function SidebarChat({
                     {cvst?.isGroup ? (
                       <img
                         className="sidebar-chat-item-img"
-                        src={cvst.avatarGroup}
+                        src="https://wabetainfo.com/wp-content/uploads/2022/05/WA_GROUP_TW.png"
                         alt=""
                       />
                     ) : (
@@ -107,16 +112,16 @@ function SidebarChat({
                           : cvst?.media.length > 0
                           ? "Media detection ..."
                           : "No message"}
-                        <span style={{ float: "right", color: "gray" }}>
+                        {/* <span style={{ float: "right", color: "gray" }}>
                           1 hour
-                        </span>
+                        </span> */}
                       </span>
                     </div>
 
                     {cvst?.isGroup ? (
                       <img
                         className="sidebar-chat-item-img-thumbnail"
-                        src={cvst?.avatarGroup}
+                        src="https://wabetainfo.com/wp-content/uploads/2022/05/WA_GROUP_TW.png"
                         alt=""
                       />
                     ) : (

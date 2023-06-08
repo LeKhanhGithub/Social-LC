@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
 
-function BotChat({ me, msg }) {
+function BotChat({ me, msg, recipient }) {
   const showImage = (url) => (
     <img className="img-thumbnail rounded" src={url} alt="images" />
   );
+  const { auth } = useSelector((state) => state);
+  const [imagePartner, setImagePartner] = useState("");
+
+  useEffect(() => {
+    if (recipient) {
+      const partner = recipient.totalUser.filter(
+        (member) => member.email !== auth.user.email
+      );
+      setImagePartner(partner[0].avatar);
+    }
+  }, [recipient]);
 
   const showVideo = (url) => (
     <video controls className="img-thumbnail rounded" src={url} alt="videos" />
@@ -39,7 +51,7 @@ function BotChat({ me, msg }) {
         <div className="boxChat_content">
           <img
             className="boxChat_content_img"
-            src="/assets/person/1.jpeg"
+            src={imagePartner ? imagePartner : "/assets/person/1.jpeg"}
             alt=""
           />
           <p

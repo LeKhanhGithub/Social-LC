@@ -19,18 +19,18 @@ function Information() {
               <div className="card-body">
                 <h5 className="card-title">FaceBook</h5>
                 <p className="card-text">
-                  My facebook , My name is dev-H
+                  My facebook
                   <a
                     style={{ color: "blue", display: "block" }}
-                    href="https://www.facebook.com/huy08012001/"
+                    href="https://www.facebook.com/congkhanh.lc.777/"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    https://www.facebook.com/huy08012001/
+                    Khánh Công
                   </a>
                 </p>
                 <a
-                  href="https://www.facebook.com/huy08012001/"
+                  href="https://www.facebook.com/congkhanh.lc.777/"
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-primary"
@@ -49,18 +49,18 @@ function Information() {
               <div className="card-body">
                 <h5 className="card-title">Github</h5>
                 <p className="card-text">
-                  My github , My name is dev-H-vn
+                  My github
                   <a
                     style={{ color: "blue", display: "block" }}
-                    href="https://github.com/dev-H-vn/"
+                    href="https://github.com/LeKhanhGithub"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    https://github.com/dev-H-vn/
+                    LeKhanh
                   </a>
                 </p>
                 <a
-                  href="https://github.com/dev-H-vn/"
+                  href="https://github.com/LeKhanhGithub"
                   className="btn btn-primary"
                   target="_blank"
                   rel="noreferrer"
@@ -78,18 +78,18 @@ function Information() {
               <div className="card-body">
                 <h5 className="card-title">Youtube</h5>
                 <p className="card-text">
-                  My youtuber , My name is dev-H
+                  My youtuber
                   <a
                     style={{ color: "blue", display: "block" }}
-                    href="https://www.youtube.com/channel/UCq4XK7IDl04bZY5hcTTK5QA"
+                    href="https://www.youtube.com/channel/UCA9IdgFEQVF-suQeFdkOXcg"
                     target="_blank"
                     rel="noreferrer"
                   >
-                    https://www.youtube.com/channel/UCq4XK7IDl04bZY5hcTTK5QA
+                    Just relax
                   </a>
                 </p>
                 <a
-                  href="https://www.youtube.com/channel/UCq4XK7IDl04bZY5hcTTK5QA"
+                  href="https://www.youtube.com/channel/UCA9IdgFEQVF-suQeFdkOXcg"
                   className="btn btn-primary"
                   target="_blank"
                   rel="noreferrer"

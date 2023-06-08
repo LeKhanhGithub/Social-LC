@@ -10,10 +10,13 @@ import io from "socket.io-client";
 import { getSocket } from "./redux/reducers/socket";
 import SocketClient from "./SocketClient";
 import Toasts from "./components/Toasts";
+import AppVideo from "./components/VideoCall/App";
+import { AppContext } from "./components/VideoCall/AppContext";
 
 function App() {
   const dispatch = useDispatch();
   const { auth, alert } = useSelector((state) => state);
+
   useEffect(() => {
     if (localStorage.getItem("login")) {
       dispatch(refreshToken());
@@ -35,6 +38,7 @@ function App() {
           <Route exact path="/" element={<PageRender />} />
           <Route exact path="/:page" element={<PageRender />} />
           <Route exact path="/:page/:id" element={<PageRender />} />
+          <Route exact path="/video/call" element={<AppContext />} />
         </Routes>
       </Router>
     </div>

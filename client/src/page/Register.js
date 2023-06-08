@@ -43,9 +43,9 @@ function Register() {
     <div className="login">
       <div className="login-sidebar">
         <div className="login-info">
-          <h3 className="loginLogo">Social-dev-H</h3>
+          <h3 className="loginLogo">Social</h3>
           <span className="loginDesc">
-            Connect with friends and the world around you on social-dev-H.
+            Connect with friends and the world around you on social.
           </span>
         </div>
       </div>

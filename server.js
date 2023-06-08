@@ -62,6 +62,35 @@ mongoose.connect(
 
 // post
 
+const io2 = new Server(http, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"],
+  },
+});
+
+app.use(cors());
+
+app.get("/", (req, res) => {
+  res.send("Running");
+});
+
+io2.on("connection", (socket) => {
+  socket.emit("me", socket.id);
+
+  socket.on("disconnect", () => {
+    socket.broadcast.emit("callEnded");
+  });
+
+  socket.on("callUser", ({ userToCall, signalData, from, name }) => {
+    io2.to(userToCall).emit("callUser", { signal: signalData, from, name });
+  });
+
+  socket.on("answerCall", (data) => {
+    io2.to(data.to).emit("callAccepted", data.signal);
+  });
+});
+
 http.listen(process.env.PORT || 3000, (req, res) => {
   console.log("BE is running");
 });
